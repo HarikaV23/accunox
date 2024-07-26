@@ -6,4 +6,5 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 COPY . /app
 EXPOSE 4499
-CMD ["cd /root/myapp","./wisecow.sh"]
+CMD ["cd /root/myapp","./wisecow.sh"] 
+####
