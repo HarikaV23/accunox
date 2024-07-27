@@ -1,6 +1,6 @@
 FROM alpine:latest
 RUN apt-get update &&  \
-    apt-get install -y fortune-mod cowsay && \ 
+    apt-get install  fortune-mod cowsay  -y  && \ 
     apt-get clean
 WORKDIR /app
 COPY wisecow.sh .
