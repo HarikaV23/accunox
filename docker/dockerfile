@@ -1,10 +1,10 @@
-FROM ubuntu:20.04
-RUN apt-get update && \
+FROM alpine:latest
+RUN apt-get update &&  \
     apt-get install -y fortune-mod cowsay && \ 
     apt-get clean
-    
-COPY wisecow.sh /usr/local/bin/wisecow.sh
-RUN chmod +x /usr/local/bin/wisecow.sh
+WORKDIR /app
+COPY wisecow.sh .
+RUN chmod +x wisecow.sh
 EXPOSE 4499
-CMD ["/usr/local/bin/wisecow.sh"] 
+CMD ["./wisecow.sh"] 
 ####
