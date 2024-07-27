@@ -1,0 +1,40 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mywisecow-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      name: mypod
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: c1
+        image: harika232002/my-wisecow-app:latest
+        ports:
+        - containerPort: 4499
+
+
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mywisecow-service
+spec:
+  selector:
+    app: myapp
+  ports:
+  - name: http
+    port: 80
+    targetPort: 4499
+  type: LoadBalancer
