@@ -41,12 +41,8 @@ main() {
 		cat $RSPFILE | nc -lN $SRVPORT | handleRequest
 		sleep 0.01
 	done
-	{
-	while true; do
-        /usr/games/fortune | /usr/games/cowsay
-        sleep 5
-    done
-	}
+
+
 }
 
 main
