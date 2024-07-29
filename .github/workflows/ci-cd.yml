@@ -23,7 +23,7 @@ jobs:
         run: |
           docker build -t harika232002/myapp:${{ github.sha }} .
           docker push harika232002/myapp:${{ github.sha }}
-          
+
     - name: Deploy to Kubernetes
       uses: appleboy/ssh-action@master
       with:
