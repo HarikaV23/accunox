@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: c1
-        image: harika232002/myapp:latest
+        image: harika232002/mywisecow-app:latest
         ports:
         - containerPort: 4499
 
